@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Header />
+  <Header :name=post.nsme />
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
