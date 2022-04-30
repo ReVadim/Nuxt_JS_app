@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Header :name=post.name />
+  <Header :h1=post.name />
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
@@ -11,8 +11,6 @@
             </ol>
           </nav>
           <img class="img-fluid rounded " :src="post.image" alt="">
-          <hr>
-          <p v-html="post.description"></p>
           <hr>
           <p v-html="post.content"></p>
           <div class="d-flex justify-content-end">
@@ -26,9 +24,9 @@
             <div class="p-2">Опубликовано: {{ post.created_at }}</div>
           </div>
           <hr>
-            <Comments />
+          <Comments :comments="comments" :post="post" />
         </div>
-        <Aside :aside=aside :tags=tags />
+        <Aside :tags=tags :aside=aside />
       </div>
     </div>
   </div>
@@ -48,14 +46,15 @@ export default {
   },
   layout: "post_detail",
   async asyncData({params}) {
-    console.log(params)
     const post = await axios.get(`http://127.0.0.1:8000/api/posts/${params.slug}`);
-    const aside = await axios.get(`http://127.0.0.1:8000/api/aside/`);
     const tags = await axios.get(`http://127.0.0.1:8000/api/tags/`);
+    const aside = await axios.get(`http://127.0.0.1:8000/api/aside/`);
+    const comments = await axios.get(`http://127.0.0.1:8000/api/comments/${params.slug}`);
     return {
       post: post.data,
-      aside: aside.data,
       tags: tags.data,
+      aside: aside.data,
+      comments: comments.data
     }
   },
 }

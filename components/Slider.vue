@@ -1,4 +1,3 @@
-
 <template>
   <div class="container-fluid home-slider">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -49,5 +48,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
