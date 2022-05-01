@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <Slider />
+    <Image_slider />
       <Nuxt />
     <Footer />
   </div>
@@ -10,13 +10,13 @@
 
 <script>
 import Navbar from "~/components/Navbar";
-import Slider from "~/components/Slider";
+import Image_slider from "~/components/Image_slider";
 import Footer from "~/components/Footer";
 
 export default {
   components: {
     Footer,
-    Slider,
+    Image_slider,
     Navbar,
   }
 };

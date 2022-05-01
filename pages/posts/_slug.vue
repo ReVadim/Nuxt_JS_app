@@ -1,6 +1,6 @@
 <template>
   <div>
-  <Header :h1=post.name />
+  <Header :name=post.name />
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
@@ -13,6 +13,8 @@
           <img class="img-fluid rounded " :src="post.image" alt="">
           <hr>
           <p v-html="post.content"></p>
+          <hr>
+            <p v-html="post.description"></p>
           <div class="d-flex justify-content-end">
             <span v-for="tag in post.tags">
                   <nuxt-link :to="`/tags/${tag.slug}`" class="mr-1 badge badge-info">#{{ tag.name }}</nuxt-link>

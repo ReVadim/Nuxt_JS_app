@@ -1,11 +1,21 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p class="float-right">
+      <div class="row">
+          <div class="col-sm">
+      <span class="text-muted">Telegram: @Re_Vadim</span>
+        </div>
+          <div class="col-sm">
+        <a href="https://github.com/revadim/">GitHub</a>
+          </div>
+        <div class="col-sm">
+      <p class="text-right">
         <a href="#">Наверх</a>
       </p>
-      <span class="text-muted">Агентство по разработке потрясных сайтов на bootstrap, drf и nuxtJS. А это просто наш блог.</span>
+        </div>
     </div>
+    </div>
+
   </footer>
 </template>
 
